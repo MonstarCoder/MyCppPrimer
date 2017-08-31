@@ -1,6 +1,6 @@
 #include <iostream>
-using namespace std;
-istream& func(istream &is)
+
+std::istream& func(std::istream &is)
 {
 	std::string buf;
 	while (is >> buf)
@@ -10,7 +10,7 @@ istream& func(istream &is)
 }
 int main()
 {
-	istream& is = func(std::cin);
+    std::istream& is = func(std::cin);
 	std::cout << is.rdstate() << std::endl;
 	return 0;
 }

@@ -3,6 +3,7 @@
 #include<vector>
 #include<fstream>
 using namespace std;
+
 void ReadFileToVec(const string& FileName, vector<string>& vec)
 {
 	ifstream ifs(FileName);

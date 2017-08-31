@@ -3,13 +3,14 @@
 
 #include "../ch07/ex07_26.h"
 using std::ifstream;
-using std::cout;
+using std::ofstream;
 using std::endl;
 using std::cerr;
 
 int main(int argc, char** argv)
 {
     ifstream input(argv[1]);
+    ofstream output(argv[2]);
 
     Sales_data total;
     if (read(input, total)) {
@@ -18,11 +19,11 @@ int main(int argc, char** argv)
             if (total.isbn() == trans.isbn())
                 total.combine(trans);
             else {
-                print(cout, total) << endl;
+                print(output, total) << endl;
                 total = trans;
             }
         }
-        print(cout, total) << endl;
+        print(output, total) << endl;
     }
     else {
         cerr << "No data?!" << endl;
