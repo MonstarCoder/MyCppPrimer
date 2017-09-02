@@ -1,27 +1,27 @@
-#include<iostream>
-#include<string>
-#include<vector>
+#include <iostream>
+#include <string>
+#include <vector>
 
-using namespace std;
-
-class Date {
+class wy_Date {
 public:
-	Date(const string& s);
-	unsigned year;
-	unsigned month;
-	unsigned day;
+    wy_Date(const std::string& s);
+    unsigned year;
+    unsigned month;
+    unsigned day;
 };
 
 int main()
 {
-	Date d("30/11/1994");
-	cout << d.year << " " << d.month << " " << d.day << endl;
-	return 0;
+    wy_Date d("99/21/3871");
+
+    std::cout << d.day << " " << d.month << " " << d.year << " ";
+
+    return 0;
 }
 
-Date::Date(const string& s)
+wy_Date::wy_Date(const std::string& s)
 {
-	unsigned format = 0;
+    unsigned format = 0;
 
     //! 1/1/1900
     if (s.find_first_of("/") != std::string::npos) format = 0x10;

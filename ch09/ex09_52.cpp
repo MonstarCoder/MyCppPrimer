@@ -1,31 +1,34 @@
-#include<stack>
-#include<string>
-#include<iostream>
+#include <stack>
+using std::stack;
 
-using namespace std;
+#include <string>
+using std::string;
+
+#include <iostream>
+using std::cout;
+using std::endl;
 
 int main()
 {
-	auto& expr = "This is (fkashfuasd(0fsadfodsj))) fah (sifdlja) over";
-	auto repl ='#';
-	auto seen = 0;
+    auto& expr = "This is (Monstar(awesome)((((wooooooooo))))) and (Marvin) over";
+    auto repl = '#';
+    auto seen = 0;
 
-	stack<char> stk;
-	
-	for ( auto c : expr) {
-		stk.push(c);
-		if (c == '(') ++seen;
-		if(seen && c == ')') {
-			while (stk.top() != ')') stk.pop();
-			stk.pop();
-			stk.push(repl);
-			--seen;
-		}
-	}
+    stack<char> stk;
 
-	string output;
-	for (; !stk.empty(); stk.pop())
-		output.insert(output.begin(), stk.top());
-	cout << output << endl;
-	return 0;
+    for (auto c : expr) {
+        stk.push(c);
+        if (c == '(') ++seen;   // open
+        if (seen && c == ')') { // pop elements down to the stack
+            while (stk.top() != '(') stk.pop();
+            stk.pop();      // including the open parenthesis
+            stk.push(repl); // push a value indicate it was replaced
+            --seen;         // close
+        }
+    }
+
+    // Test
+    string output;
+    for (; !stk.empty(); stk.pop()) output.insert(output.begin(), stk.top());
+    cout << output << endl; // "This is # and # over"
 }

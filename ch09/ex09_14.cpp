@@ -13,6 +13,6 @@ int main()
 
 	for (const auto& i : vec) cout << i << endl;
 
-	return 0; 
+	return 0;
 }
 
