@@ -11,8 +11,8 @@ map<string, string> buildMap(ifstream& map_file)
 	map<string, string> trans_map;
 	for (string key, value; map_file >> key && getline(map_file, value);)
 		if (value.size() > 1)
-			trans_map[key] = 
-				value.substr(1).substr(0, value.find_last_not_of					(' '));		
+			trans_map[key] =
+				value.substr(1).substr(0, value.find_last_not_of(' '));
 	return trans_map;
 }
 

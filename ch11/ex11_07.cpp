@@ -2,6 +2,7 @@
 #include<map>
 #include<string>
 #include<algorithm>
+#include <vector>
 
 using namespace std;
 
@@ -27,6 +28,6 @@ int main()
 		for (auto c : e.second) cout << c << " ";
 		cout << "\n";
 	}
-	
+
 	return 0;
 }

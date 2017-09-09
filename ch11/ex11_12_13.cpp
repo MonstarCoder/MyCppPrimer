@@ -3,7 +3,12 @@
 #include<string>
 #include<vector>
 
-using namespace std;
+using std::vector;
+using std::pair;
+using std::cin;
+using std::cout;
+using std::endl;
+using std::string;
 
 int main()
 {
