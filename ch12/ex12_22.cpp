@@ -1,10 +1,10 @@
-#include "ex12_22.h"
+#include "ex12_19.h"
 
-ConstStrBlobPtr StrBlob::begin() const // should add const
+StrBlobPtr StrBlob::begin()
 {
-	    return ConstStrBlobPtr(*this);
+    return StrBlobPtr(*this);
 }
-ConstStrBlobPtr StrBlob::end() const // should add const
+StrBlobPtr StrBlob::end()
 {
-	    return ConstStrBlobPtr(*this, data->size());
+    return StrBlobPtr(*this, data->size());
 }
