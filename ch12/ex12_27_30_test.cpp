@@ -14,6 +14,6 @@ void runQueries(std::ifstream& infile)
 
 int main()
 {
-    std::ifstream file("../data/storyDataFile.txt");
+    std::ifstream file("../data/letter");
     runQueries(file);
 }

@@ -16,7 +16,7 @@ using std::shared_ptr;
 
 int main()
 {
-    std::ifstream file("../data/letter.txt");
+    std::ifstream file("../data/letter");
     vector<string> input;
     std::map<string, std::set<decltype(input.size())>> dictionary;
     decltype(input.size()) lineNo{0};
