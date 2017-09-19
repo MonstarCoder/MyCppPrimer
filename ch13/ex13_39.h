@@ -18,12 +18,12 @@ public:
 	std::string* begin() const {return elements;}
 	std::string* end() const {return first_free;}
 
-	void reverse(size_t new_cap);
+	void reserve(size_t new_cap);
 	void resize(size_t count);
 	void resize(size_t count, const std::string&);
 
 private:
-	stdLLpair<std::string*, std::string*> alloc_n_copy(
+	std::pair<std::string*, std::string*> alloc_n_copy(
 			const std::string*, const std::string*);
 	void free();
 	void chk_n_alloc()
@@ -34,11 +34,11 @@ private:
 	void alloc_n_move(size_t new_cap);
 
 private:
-	std::string* elementsl
-	std::string* forst_free;
+	std::string* elements;
+	std::string* first_free;
 	std::string* cap;
 	std::allocator<std::string> alloc;
 };
 #endif
 
-	
+

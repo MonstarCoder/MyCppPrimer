@@ -41,10 +41,10 @@ private:
 
 class BinStrTree {
 public:
-	BinStrTree() : root(new TreeNode() {}
+	BinStrTree() : root(new TreeNode()) {}
 	BinStrTree(const BinStrTree& bst) : root(new TreeNode(*bst.root)) {}
 	BinStrTree& operator=(const BinStrTree& bst);
-	~BinStrTree() {delete root;}
+	~BinStrTree() { delete root; }
 
 private:
 	TreeNode* root;
