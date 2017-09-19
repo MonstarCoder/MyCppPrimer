@@ -22,14 +22,10 @@ public:
 
 	StrBlob() : data(std::make_shared<vector<string>>()) {}
 	StrBlob(std::initializer_list<string> il
-			: data(std:make_shared<vector<string>>(il))
-			{
-			}
+			: data(std:make_shared<vector<string>>(il)) {}
 
 	StrBlob(const StrBlob& sb)
-	: data(std::make_shared<vector<string>>(*sb.data))
-	{
-	}
+	: data(std::make_shared<vector<string>>(*sb.data)) {}
 
 	StrBlob& operator=(const StrBlob& sb);
 
