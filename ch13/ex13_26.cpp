@@ -1,15 +1,16 @@
 #include "ex13_26.h"
 
-ConstStrBlobPtr StrBlob::begin() const
+ConstStrBlobPtr StrBlob::begin() const // should add const
 {
-	return ConstStrBlobPtr(*this);
+    return ConstStrBlobPtr(*this);
 }
-ConstStrBlobPtr StrBlob::end() const
+ConstStrBlobPtr StrBlob::end() const // should add const
 {
-	return ConstStrBlobPtr(*this, data->size());
+    return ConstStrBlobPtr(*this, data->size());
 }
-SrtrBlob& StrBlob::operator=(const StrBlob& sb)
+
+StrBlob& StrBlob::operator=(const StrBlob& sb)
 {
-	data = std::make_shared<vector<string>>(*sb.data);
-	return *this;
+    data = std::make_shared<vector<string>>(*sb.data);
+    return *this;
 }

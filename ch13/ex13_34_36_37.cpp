@@ -3,7 +3,7 @@
 
 void swap(Message& lhs, Message& rhs)
 {
-	using std::swap;
+    using std::swap;
     lhs.remove_from_Folders();
     rhs.remove_from_Folders();
 
@@ -14,15 +14,17 @@ void swap(Message& lhs, Message& rhs)
     rhs.add_to_Folders(rhs);
 }
 
+// Message Implementation
+
 Message::Message(const Message& m) : contents(m.contents), folders(m.folders)
 {
-	add_to_Folders(m);
+    add_to_Folders(m);
 }
 
 Message& Message::operator=(const Message& rhs)
 {
-	remove_from_Folders();
-	contents = rhs.contents;
+    remove_from_Folders();
+    contents = rhs.contents;
     folders = rhs.folders;
     add_to_Folders(rhs);
     return *this;
@@ -59,6 +61,9 @@ void Message::remove_from_Folders()
 {
     for (auto f : folders) f->remMsg(this);
 }
+
+// Folder Implementation
+
 void swap(Folder& lhs, Folder& rhs)
 {
     using std::swap;
