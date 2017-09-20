@@ -7,10 +7,13 @@
 class HasPtr {
 public:
     friend void swap(HasPtr&, HasPtr&);
-    HasPtr(const std::string& s = std::string()) : ps(new std::string(s)), i(0)
-    {
-    }
+    HasPtr(const std::string& s = std::string()) : ps(new std::string(s)), i(0)	{}
+    HasPtr(HasPtr &&p) noexcept :ps(p.ps), i(p.i) {p.ps = 0;}
     HasPtr(const HasPtr& hp) : ps(new std::string(*hp.ps)), i(hp.i) {}
+    HasPtr& operator=(HasPtr rhs) {
+        swap(*this, rhs);
+        return *this;
+    }
     HasPtr& operator=(const HasPtr& hp)
     {
         auto new_p = new std::string(*hp.ps);
@@ -19,6 +22,7 @@ public:
         i = hp.i;
         return *this;
     }
+
     ~HasPtr() { delete ps; }
 
     void show() { std::cout << *ps << std::endl; }
@@ -36,4 +40,3 @@ void swap(HasPtr& lhs, HasPtr& rhs)
 }
 
 #endif
-
