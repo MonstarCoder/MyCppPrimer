@@ -5,14 +5,14 @@ class StrBlobPtr;
 
 class StrBlobPtr_pointer {
 public:
-	StrBlobPtr_pointer() = default;
-	StrBlobPtr_pointer(StrBlobPtr* p) : pointer(p) {}
+    StrBlobPtr_pointer() = default;
+    StrBlobPtr_pointer(StrBlobPtr* p) : pointer(p) {}
 
-	StrBlobPtr& operator*();
-	StrBlobPtr* operator->();
+    StrBlobPtr& operator*();
+    StrBlobPtr* operator->();
 
 private:
-	StrBlobPtr* pointer = nullptr;
+    StrBlobPtr* pointer = nullptr;
 };
 
-#endif
+#endif // STRBLOBPTR_POINTER_H

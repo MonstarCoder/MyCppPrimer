@@ -263,8 +263,7 @@ public:
   ConstStrBlobPtr() : curr(0) {}
   ConstStrBlobPtr(const StrBlob &s, size_t sz = 0) : wptr(s.data), curr(sz) {}
 
-  const string &operator*() const;
-  const string *operator->() const;
+  const string &deref() const;
   ConstStrBlobPtr &operator++();
   ConstStrBlobPtr &operator--();
   ConstStrBlobPtr operator++(int);
@@ -290,13 +289,9 @@ bool operator>(const ConstStrBlobPtr &, const ConstStrBlobPtr &);
 bool operator<=(const ConstStrBlobPtr &, const ConstStrBlobPtr &);
 bool operator>=(const ConstStrBlobPtr &, const ConstStrBlobPtr &);
 
-inline const string &ConstStrBlobPtr::operator*() const {
+inline const string &ConstStrBlobPtr::deref() const {
   auto p = check(curr, "dereference past end");
   return (*p)[curr];
-}
-
-inline const string *ConstStrBlobPtr::operator->() const {
-  return &this->operator*();
 }
 
 inline ConstStrBlobPtr &ConstStrBlobPtr::operator++() {

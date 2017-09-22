@@ -4,18 +4,18 @@
 
 StrBlobPtr& StrBlobPtr_pointer::operator*()
 {
-	return *(this->pointer);
+    return *(this->pointer);
 }
 
 StrBlobPtr* StrBlobPtr_pointer::operator->()
 {
-	return &this->operator*();
+    return &this->operator*();
 }
 
 int main()
 {
-	StrBlob sb{"hello world"};
-	StrBlobPtr iter = sb.begin();
-	StrBlobPtr_pointer p(&iter);
-	std::cout << p->deref() << std::endl;
+    StrBlob sb{"hello", "world"};
+    StrBlobPtr iter = sb.begin();
+    StrBlobPtr_pointer p(&iter);
+    std::cout << p->deref() << std::endl;
 }
