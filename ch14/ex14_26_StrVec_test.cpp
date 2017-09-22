@@ -1,4 +1,4 @@
-#include "ex14_23.h"
+#include "ex14_26_StrVec.h"
 #include <iostream>
 #include <vector>
 
@@ -34,12 +34,15 @@ int main()
 
     // Test operator==
 
-    const StrVec const_vec_list = {"hello", "world", "pezy"};
+    const StrVec const_vec_list{"hello", "world", "pezy"};
     if (vec_list == const_vec_list)
         for (const auto& str : const_vec_list) std::cout << str << " ";
     std::cout << std::endl;
 
     // Test operator<
-    const StrVec const_vec_list_small = {"hello", "pezy", "ok"};
+    const StrVec const_vec_list_small{"hello", "pezy", "ok"};
     std::cout << (const_vec_list_small < const_vec_list) << std::endl;
+
+    // Test []
+    std::cout << const_vec_list_small[1] << std::endl;
 }

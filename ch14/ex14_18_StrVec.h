@@ -28,8 +28,6 @@ public:
     StrVec& operator=(StrVec&&) NOEXCEPT;
     ~StrVec();
 
-    StrVec& operator=(std::initializer_list<std::string>);
-
     void push_back(const std::string&);
     size_t size() const { return first_free - elements; }
     size_t capacity() const { return cap - elements; }

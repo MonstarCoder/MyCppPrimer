@@ -28,8 +28,6 @@ public:
     StrVec& operator=(StrVec&&) NOEXCEPT;
     ~StrVec();
 
-    StrVec& operator=(std::initializer_list<std::string>);
-
     void push_back(const std::string&);
     size_t size() const { return first_free - elements; }
     size_t capacity() const { return cap - elements; }
@@ -38,6 +36,9 @@ public:
 
     std::string& at(size_t pos) { return *(elements + pos); }
     const std::string& at(size_t pos) const { return *(elements + pos); }
+
+    std::string& operator[](size_t n) { return elements[n]; }
+    const std::string& operator[](size_t n) const { return elements[n]; }
 
     void reserve(size_t new_cap);
     void resize(size_t count);

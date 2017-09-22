@@ -1,4 +1,4 @@
-#include "ex14_23.h"
+#include "ex14_18_StrVec.h"
 #include <algorithm> // for_each, equal
 
 void StrVec::push_back(const std::string& s)
@@ -146,13 +146,4 @@ bool operator<=(const StrVec& lhs, const StrVec& rhs)
 bool operator>=(const StrVec& lhs, const StrVec& rhs)
 {
     return !(lhs < rhs);
-}
-
-StrVec& StrVec::operator=(std::initializer_list<std::string> il)
-{
-    auto data = alloc_n_copy(il.begin(), il.end());
-    free();
-    elements = data.first;
-    first_free = cap = data.second;
-    return *this;
 }
