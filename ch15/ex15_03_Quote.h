@@ -6,33 +6,30 @@
 
 inline namespace EX03 {
 
-	using std::string;
-	using std::ostream;
-	using std::endl;
-}
+    using std::string;
+    using std::ostream; using std::endl;
 
 class Quote {
 public:
-	Quote() = default;
-	Quote(string const& b, double p) : bookNo(b), price(p) { }
+    Quote() = default;
+    Quote(string const& b, double p) : bookNo(b), price(p) { }
 
-	string idbn() const { return bookNo;}
-	virtual double net_price(size_t n) const { return n * price; }
+    string isbn() const { return bookNo; }
+    virtual double net_price(size_t n) const { return n * price; }
 
-	virtual ~Quote() = default;
-
+    virtual ~Quote() = default;
 private:
-	string bookNo;
+    string bookNo;
 protected:
-	double price = 0.0;
+    double price = 0.0;
 };
 
 double print_total(ostream& os, Quote const& item, size_t n) {
-	double ret = item.net_price(n);
-	os << "ISBN: " << item.isbn() << " # sold: " << n << " total due “
-		<< ret << endl;
-	return ret;
+    double ret = item.net_price(n);
+    os << "ISBN: " << item.isbn() << " # sold: " << n << " total due: " << ret << endl;
+    return ret;
 }
 
 }
 
+#endif // CP5_EX15_03_QUOTE_H_
