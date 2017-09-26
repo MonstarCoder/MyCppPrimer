@@ -3,12 +3,12 @@
 
 template <typename T, unsigned N> T* Begin(T (&arr)[N])
 {
-	    return arr;
+    return arr;
 }
 
 template <typename T, unsigned N> T* End(T (&arr)[N])
 {
-	    return arr + N;
+    return arr + N;
 }
 
 #endif // CP5_EX16_06_BEGIN_END_H_
