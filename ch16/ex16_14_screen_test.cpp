@@ -2,11 +2,12 @@
 
 int main()
 {
-	    Screen<5, 5> screen('x');
-		    screen.set(2, 2, 'o');
-			    std::cout << screen << std::endl;
+    Screen<5, 5> screen('x');
+    screen.set(2, 2, 'o');
+    std::cout << screen << std::endl;
 
-				    std::cout << "please input some characters as you like:";
-					    std::cin >> screen;
-						    std::cout << screen << std::endl;
+    std::cout << "please input characters:";
+    std::cin >> screen;
+    std::cout << screen << std::endl;
 }
+
