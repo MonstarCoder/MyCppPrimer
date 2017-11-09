@@ -8,7 +8,7 @@ public:
 	virtual ~A() {}
 };
 
-class B : public A {
+class B : public virtual A {
 public:
 	virtual ~B() {}
 };
@@ -37,7 +37,7 @@ int main(int argc, char const *argv[])
 	if (pc) cout << "19.3 (b) succeed!" << endl;
 	else cout << "19.3 (b) fail!" << endl;
 
-	pa = new D;    
+	//A* pa = new D;    
 	//pb = dynamic_cast< B* >(pa); */
 
 	/* Exercise 19.4 */
